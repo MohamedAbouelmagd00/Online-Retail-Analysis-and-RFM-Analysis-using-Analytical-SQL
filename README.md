@@ -36,7 +36,7 @@ FROM tableretail
 GROUP BY country;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled.png)
+![Untitled](README/Untitled.png)
 
 - Getting to know the market countries and its count, I found that there is one country in the date set **UK United Kingdom** , So the currency we have here in (GBP)
 
@@ -50,7 +50,7 @@ FROM tableretail
 ORDER BY "Total_sold/stock" DESC ;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%201.png)
+![Untitled](README/Untitled%201.png)
 
 - Found that there is a very big difference between stocks in the amount sold as the highest stock is  sold 7824 while the lowest is sold only 1 time so I needed to check another factor like the total sells in (GBP) for each stock.
 
@@ -64,7 +64,7 @@ FROM tableretail
 ORDER BY "Total sells (GBP)/stock" DESC ;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%202.png)
+![Untitled](README/Untitled%202.png)
 
 - I found that the highest stock to get sells in (GBP) is 9115 mean while there is plenty of other items which have not been touched in the stores or sold only once or twice. It started to get clue about which items is gets more profit.
 
@@ -79,7 +79,7 @@ FROM (SELECT DISTINCT stockcode
 		FROM tableretail) AS rnk;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%203.png)
+![Untitled](README/Untitled%203.png)
 
 - Getting the best seller stock tells us what our customers need exactly!, what category we want to invest in more? , and it can indicate related items that our customers may be interested in as we want to keep all possibilities open to get more revenue.
 
@@ -92,7 +92,7 @@ FROM tableretail
 ORDER BY "Total_purchased (GBP)/customer" DESC;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%204.png)
+![Untitled](README/Untitled%204.png)
 
 - The total amount of money spend for each customer can be useful to make promotions for the customers when they break a certain limit so that keeps them motivated to do more shopping and spend more money. and based on that we can simply rank the customers.
 
@@ -107,7 +107,7 @@ FROM  (SELECT DISTINCT customer_ID
 		FROM tableretail) AS cus;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%205.png)
+![Untitled](README/Untitled%205.png)
 
 - Ranking the customers can be useful in analysis as studying the top ranking customers can identify more clearly the customer segment that we need to focus our effort on.
 - It can indicates other segments that we need to attract to buy more.
@@ -123,7 +123,7 @@ FROM tableretail
 ORDER BY counting DESC;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%206.png)
+![Untitled](README/Untitled%206.png)
 
 - Getting the time into the equation makes every thing clear as time is useful in explaining other factors.
 - Looking at the amount sold per each date can indicates the golden days that I need to focus on to get more sales as in special occasions, and the times I need to find a channel to get more sales in depression days.
@@ -149,7 +149,7 @@ ORDER BY counting DESC;
     - For this, we would decrease the permutations by getting the average scores of the frequency and monetary (as both of them are indicative to purchase volume anyway
 - Customers will be labeled based on the below values
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%207.png)
+![Untitled](README/Untitled%207.png)
 
 ```sql
 WITH customer_seg AS (SELECT DISTINCT customer_id
@@ -197,7 +197,7 @@ WITH customer_seg AS (SELECT DISTINCT customer_id
 							  WHERE Cs.CUSTOMER_ID=Cr.CUSTOMER_ID;
 ```
 
-![Untitled](Online%20Retail%20Analysis%20and%20RFM%20Analysis%20using%20Anal%20f8698dd45dac4ca889e5a3a718bbb1e4/Untitled%208.png)
+![Untitled](README/Untitled%208.png)
 
 ---
 
